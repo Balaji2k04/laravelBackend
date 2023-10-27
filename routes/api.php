@@ -15,7 +15,9 @@ use App\Http\Controllers\Simple;
 */
 
 Route::get('/data', [Simple::class, 'index']);
-
+Route::get('/va', function () {
+    return view('welcome');
+});
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
