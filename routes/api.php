@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Simple;
+use App\Http\Controllers\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,8 +15,9 @@ use App\Http\Controllers\Simple;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+Route::apiResource('/student',StudentController::class);
 Route::get('/data', [Simple::class, 'index']);
+
 Route::get('/va', function () {
     return view('welcome');
 });
