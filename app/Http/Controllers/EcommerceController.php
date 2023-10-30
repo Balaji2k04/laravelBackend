@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CardCrud extends Controller
+class EcommerceController extends Controller
 {
     private $database;
 
