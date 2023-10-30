@@ -20,13 +20,13 @@ use App\Http\Controllers\StudentController;
 // Route::apiResource('/student', StudentController::class);
 Route::get('/data', [Simple::class, 'index']);
 
-Route::get('/va', function () {
-    return view('welcome');
-});
-Route::post('/create', [CardCrud::class, 'create']);
-Route::get('/list', [CardCrud::class, 'index']);
-Route::put('/update/{id}', [CardCrud::class, 'edit']);
-Route::delete('/delete/{id}', [CardCrud::class, 'delete']);
+// Route::get('/va', function () {
+//     return view('welcome');
+// });
+Route::post('ecommerce/create', [CardCrud::class, 'create']);
+Route::get('ecommerce/list', [CardCrud::class, 'index']);
+Route::put('ecommerce/update/{id}', [CardCrud::class, 'edit']);
+Route::delete('ecommerce/delete/{id}', [CardCrud::class, 'delete']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();

@@ -21,35 +21,39 @@ class CardCrud extends Controller
         $uniqueId = 'id' . $randomNumber . $timestamp;
 
         $this->database
-            ->getReference('test/blogs/' . $uniqueId)
+            ->getReference('ecommerce/crud_ecommerce/' . $uniqueId)
             ->set([
-                'title' => $request['title'],
-                'content' => $request['content'],
+                'productname' => $request['productname'],
+                'image' => $request['image'],
+                'description' => $request['description'],
+                'price' => $request['price'],
                 'id' => $uniqueId
             ]);
 
-        return response()->json('blog has been created');
+        return response()->json('Ecommerce has been created');
     }
     public function index()
     {
-        return response()->json($this->database->getReference('test/blogs')->getValue());
+        return response()->json($this->database->getReference('ecommerce/crud_ecommerce')->getValue());
     }
     public function edit(Request $request, $id)
     {
-        $this->database->getReference('test/blogs/' . $id)
+        $this->database->getReference('ecommerce/crud_ecommerce/' . $id)
             ->update([
-                'title' => $request['title'],
-                'content' => $request['content'],
+                'productname' => $request['productname'],
+                'image' => $request['image'],
+                'description' => $request['description'],
+                'price' => $request['price'],
             ]);
 
-        return response()->json('blog has been edited');
+        return response()->json('Ecommerce has been edited');
     }
     public function delete(Request $request, $id)
     {
         $this->database
-            ->getReference('test/blogs/' . $id)
+            ->getReference('ecommerce/crud_ecommerce/' . $id)
             ->remove();
 
-        return response()->json('blog has been deleted');
+        return response()->json('Ecommerce has been deleted');
     }
 }
