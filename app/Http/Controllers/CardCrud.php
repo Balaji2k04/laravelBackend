@@ -34,7 +34,25 @@ class CardCrud extends Controller
     }
     public function index()
     {
-        return response()->json($this->database->getReference('ecommerce/crud_ecommerce')->getValue());
+        $transformedData = [];
+        $originalData = $this->database->getReference('ecommerce/crud_ecommerce')->getValue();
+        foreach ($originalData as $item) {
+            $transformedData[] = [
+                'description' => $item['description'],
+                'id' => $item['id'],
+                'image' => $item['image'],
+                'price' => $item['price'],
+                'productname' => $item['productname'],
+            ];
+        }
+
+        $response = [
+            'products' => $transformedData,
+        ];
+
+        // Convert the response to JSON
+        $jsonResponse = json_encode($response);
+        return response()->json($response);
     }
     public function edit(Request $request, $id)
     {
