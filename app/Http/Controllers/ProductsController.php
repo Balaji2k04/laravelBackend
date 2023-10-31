@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class EcommerceController extends Controller
+class ProductsController extends Controller
 {
     private $database;
 
