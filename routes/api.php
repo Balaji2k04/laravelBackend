@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\EcommerceController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Simple;
@@ -23,10 +23,10 @@ use App\Http\Controllers\StudentController;
 // Route::get('/va', function () {
 //     return view('welcome');
 // });
-Route::post('ecommerce/create', [EcommerceController::class, 'create']);
-Route::get('ecommerce/list', [EcommerceController::class, 'index']);
-Route::put('ecommerce/update/{id}', [EcommerceController::class, 'edit']);
-Route::delete('ecommerce/delete/{id}', [EcommerceController::class, 'delete']);
+Route::post('product/create', [ProductsController::class, 'create']);
+Route::get('product/list', [ProductsController::class, 'index']);
+Route::put('product/update/{id}', [ProductsController::class, 'edit']);
+Route::delete('product/delete/{id}', [ProductsController::class, 'delete']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
