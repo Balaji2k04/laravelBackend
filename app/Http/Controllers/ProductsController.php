@@ -73,16 +73,16 @@ class ProductsController extends Controller
     {
         try {
             $originalData = $this->database->getReference('ecommerce/crud_ecommerce')->getValue();
-            if (empty($originalData)) {
-                // If data is empty, return a response with a 404 Not Found status
-                $response = [
-                    'statuscode' => 404,
-                    'products' => [],
-                    'message' => 'Data not found',
-                    'isSuccess' => false,
-                ];
-                return response()->json($response);
-            }
+            // if (empty($originalData)) {
+            //     // If data is empty, return a response with a 404 Not Found status
+            //     $response = [
+            //         'statuscode' => 404,
+            //         'products' => [],
+            //         'message' => 'Data not found',
+            //         'isSuccess' => false,
+            //     ];
+            //     return response()->json($response);
+            // }
 
             $transformedData = [];
 
